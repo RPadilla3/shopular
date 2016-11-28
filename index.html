@@ -8,7 +8,8 @@
 
 <body>
     <main ng-controller='ShopController as sale'>
-      <h1> Welcome heres what we have: </h1>
+      <h1> Welcome To Our Online Shop! </h1>
+      <h2> Here's What we have in Stock: </h2>
         <table>
           <th>ID</th>
           <th>Name</th>
@@ -16,6 +17,7 @@
           <th>Quantity</th>
           <th>Color</th>
           <th>Discount</th>
+          <th>Final Price</th>
           <tr ng-repeat='item in sale.items'>
           <td>{{item.id}}</td>
           <td>{{item.name}}</td>
@@ -23,6 +25,7 @@
           <td>{{item.quantity}}</td>
           <td>{{item.color}}</td>
           <td>{{item.discount}}</td>
+          <td>{{(item.price - item.discount) * sale.tax}}
           </tr>
         </table>
       <main>
