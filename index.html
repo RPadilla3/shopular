@@ -25,7 +25,7 @@
         </tr>
         <tr ng-repeat='item in sale.items'>
           <td>{{item.name}}</td>
-          <td>{{(item.price - item.discount) * sale.tax | number: 0}}
+          <td> ${{(item.price - item.discount) * sale.tax | number: 0}}
             <img src='image/sale.jpg' ng-hide='item.discount === 0' class='sale'>
           </td>
           <td>{{item.quantity}}</td>
