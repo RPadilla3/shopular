@@ -20,11 +20,11 @@
           <th>Quantity</th>
           <th>Color</th>
         </tr>
-        <tr ng-repeat='item in sale.items'
-            ng-class='{ onSale: (item.discount > 0) }'>
+        <tr ng-repeat='item in sale.items'>
           <td>{{item.name}}</td>
-          <td>{{(item.price - item.discount) * sale.tax}}
-            <img src='image/sale.jpg' ng-hide='item.discount === 0'> </td>
+          <td>{{(item.price - item.discount) * sale.tax | number: 0}}
+            <img src='image/sale.jpg' ng-hide='item.discount === 0'>
+          </td>
           <td>{{item.quantity}}</td>
           <td>{{item.color}}</td>
         </tr>
