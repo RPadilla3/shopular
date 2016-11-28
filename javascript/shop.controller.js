@@ -22,16 +22,8 @@
         { "id": 683, "name": "pillow", "price": 27, "quantity": 10, "color": "black", "discount": 12 }
       ];
 
-
-            this.tax = 1.0575;
-            console.log(this.items[2].price * this.tax);
-
-
-
+      this.tax = 1.0575;
 
   }
-
-
-
 
 }());
