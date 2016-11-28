@@ -7,28 +7,32 @@
 </head>
 
 <body>
+  <header>
+  </header>
+
     <main ng-controller='ShopController as sale'>
       <h1> Welcome To Our Online Shop! </h1>
       <h2> Here's What we have in Stock: </h2>
         <table>
-          <th>ID</th>
+        <tr>
           <th>Name</th>
           <th>Price</th>
           <th>Quantity</th>
           <th>Color</th>
-          <th>Discount</th>
-          <th>Final Price</th>
-          <tr ng-repeat='item in sale.items'>
-          <td>{{item.id}}</td>
+        </tr>
+        <tr ng-repeat='item in sale.items'
+            ng-class='{ onSale: (item.discount > 0) }'>
           <td>{{item.name}}</td>
-          <td>{{item.price}}</td>
+          <td>{{(item.price - item.discount) * sale.tax}}
+            <img src='image/sale.jpg' ng-hide='item.discount === 0'> </td>
           <td>{{item.quantity}}</td>
           <td>{{item.color}}</td>
-          <td>{{item.discount}}</td>
-          <td>{{(item.price - item.discount) * sale.tax}}
-          </tr>
+        </tr>
         </table>
       <main>
+
+    <footer>
+    </footer>
 
 
       <script src='node_modules/angular/angular.js'></script>
