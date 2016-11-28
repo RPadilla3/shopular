@@ -1,0 +1,23 @@
+header h1 {
+  text-align: center; }
+
+h2 {
+  text-align: center; }
+
+.sale {
+  float: right; }
+
+table {
+  border-spacing: 3rem;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto; }
+  table tr:nth-child(odd) {
+    background-color: #cccccc; }
+  table th {
+    border: 2px solid #000000; }
+  table td {
+    border: 1px solid #000000;
+    text-align: center; }
+
+/*# sourceMappingURL=styles.css.map */
