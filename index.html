@@ -7,17 +7,30 @@
 </head>
 
 <body>
-    <main ng-controller='ShopController as items'>
-        <h1> welcome heres what we have: </h1>
-        <ul>
-          <li> {{items.data}} </li>
-        </ul>
-    <main>
+    <main ng-controller='ShopController as sale'>
+      <h1> Welcome heres what we have: </h1>
+        <table>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Color</th>
+          <th>Discount</th>
+          <tr ng-repeat='item in sale.items'>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.color}}</td>
+          <td>{{item.discount}}</td>
+          </tr>
+        </table>
+      <main>
 
 
-    <script src='node_modules/angular/angular.js'></script>
-    <script src='javascript/shop.module.js'></script>
-    <script src='javascript/shop.controller.js'></script>
-</body>
+      <script src='node_modules/angular/angular.js'></script>
+      <script src='javascript/shop.module.js'></script>
+      <script src='javascript/shop.controller.js'></script>
+  </body>
 
 </html>
