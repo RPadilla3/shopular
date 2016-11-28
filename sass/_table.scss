@@ -4,15 +4,16 @@ table {
     width: 80%;
     margin: 0 auto;
 
-    tr:nth-child(odd) {
+      tr:nth-child(odd) {
         background-color: #cccccc;
     }
 
     th {
-        border: 2px solid black;
+        border: 2px solid $borderColor;
     }
 
     td {
-        border: 1px solid black;
+        border: 1px solid $borderColor;
+        text-align: center;
     }
 }
