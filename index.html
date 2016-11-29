@@ -1,66 +1,54 @@
 <!DOCTYPE html>
 <html ng-app='shop'>
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Shopular</title>
     <link href='normalize.css' rel='stylesheet' type='text/css'>
     <link href='styles.css' rel='stylesheet' type='text/css'>
-</head>
+  </head>
 
-<body>
-  <header>
-    <h1> Welcome To Our Online Shop! </h1>
-  </header>
+  <body>
+    <header>
+        <h1> Welcome To Our Online Shop! </h1>
+    </header>
 
     <main ng-controller='ShopController as sale' class='table'>
 
-      <h2> Here's What we have in Stock: </h2>
+        <h2> Here's What we have in Stock! </h2>
         <table>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Color</th>
-        </tr>
-        <tr ng-repeat='item in sale.items'>
-          <td>{{item.name}}</td>
-          <td> {{(item.price - item.discount) * sale.tax | currency}}
-            <img src='image/sale.jpg' ng-hide='item.discount === 0' class='sale'>
-          </td>
-          <td>{{item.quantity}}</td>
-          <td>{{item.color}}</td>
-        </tr>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Color</th>
+            </tr>
+            <tr ng-repeat='item in sale.items'>
+                <td>{{item.name}}</td>
+                <td> {{(item.price - item.discount) * sale.tax | currency}}
+                    <img src='image/sale.jpg' ng-hide='item.discount === 0' class='sale'>
+                </td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.color}}</td>
+            </tr>
         </table>
-      <main>
-      <main>
-        <form class='addItem'>
-          <input type='text' name='items' placeholder='Price..'>
-          <input type='text' name='items' placeholder='Quantity..'>
-          <input type='text' name='items' placeholder='Color..'>
-          <input type='text' name='items' placeholder='Discount..'>
-          <button type='submit' name='items'>Add Item</button>
-        </form>
-      </main>
+            <form class='addItem' name='items' ng-submit='sale.addProduct(sale.newItem)'>
+                <input type='text' name='items' placeholder='Name..' ng-model='sale.newItem.name'>
+                <input type='text' name='items' placeholder='Price..' ng-model='sale.newItem.price'>
+                <input type='text' name='items' placeholder='Quantity..' ng-model='sale.newItem.quantity'>
+                <input type='text' name='items' placeholder='Color..' ng-model='sale.newItem.color'>
+                <input type='text' name='items' placeholder='Discount..' ng-model='sale.newItem.discount'>
+                <button name='items'>Add Item</button>
+            </form>
+        </main>
+
 
     <footer>
     </footer>
 
 
-
-
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js'></script>
-    <script>
-      if (typeof(angular) === 'undefined')  {
-      console.log('including local copy');
-      var ngScriptTag = document.createElement('script');
-      ngScriptTag.setAttribute('src', 'node_modules/angular/angular.js')
-      document.write(ngScriptTag.outerHTML);
-    }
-    </script>
     <script src='node_modules/angular/angular.js'></script>
     <script src='javascript/shop.module.js'></script>
     <script src='javascript/shop.controller.js'></script>
   </body>
-
 </html>
