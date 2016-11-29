@@ -1,8 +1,20 @@
+  body {
+  background-color: $backgroundColor;
+  }
 
-h2 {
+  h2 {
     text-align: center;
-}
+  }
 
-.sale {
+  [ng-cloak] {
+  display: none;
+  }
+
+  .sale {
   float: right;
-}
+  }
+
+  .addItem {
+  text-align: center;
+  padding-top: 1%;
+  }
