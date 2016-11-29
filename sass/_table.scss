@@ -5,7 +5,7 @@ table {
     margin: 0 auto;
 
       tr:nth-child(odd) {
-        background-color: #cccccc;
+        background-color: $oddColors;
     }
 
     th {
