@@ -25,7 +25,7 @@
         </tr>
         <tr ng-repeat='item in sale.items'>
           <td>{{item.name}}</td>
-          <td> ${{(item.price - item.discount) * sale.tax | number: 0}}
+          <td> {{(item.price - item.discount) * sale.tax | currency}}
             <img src='image/sale.jpg' ng-hide='item.discount === 0' class='sale'>
           </td>
           <td>{{item.quantity}}</td>
@@ -33,14 +33,34 @@
         </tr>
         </table>
       <main>
+      <main>
+        <form class='addItem'>
+          <input type='text' name='items' placeholder='Price..'>
+          <input type='text' name='items' placeholder='Quantity..'>
+          <input type='text' name='items' placeholder='Color..'>
+          <input type='text' name='items' placeholder='Discount..'>
+          <button type='submit' name='items'>Add Item</button>
+        </form>
+      </main>
 
     <footer>
     </footer>
 
 
-      <script src='node_modules/angular/angular.js'></script>
-      <script src='javascript/shop.module.js'></script>
-      <script src='javascript/shop.controller.js'></script>
+
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js'></script>
+    <script>
+      if (typeof(angular) === 'undefined')  {
+      console.log('including local copy');
+      var ngScriptTag = document.createElement('script');
+      ngScriptTag.setAttribute('src', 'node_modules/angular/angular.js')
+      document.write(ngScriptTag.outerHTML);
+    }
+    </script>
+    <script src='node_modules/angular/angular.js'></script>
+    <script src='javascript/shop.module.js'></script>
+    <script src='javascript/shop.controller.js'></script>
   </body>
 
 </html>
