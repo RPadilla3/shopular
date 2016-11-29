@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html ng-app='shop'>
-
   <head>
     <meta charset="UTF-8">
     <title>Shopular</title>
@@ -13,7 +12,11 @@
       <h1> Welcome To Our Online Shop! </h1>
     </header>
 
-    <main ng-controller='ShopController as sale' class='table'>
+    <main
+       ng-cloak
+       ng-controller='ShopController as sale'
+       class='table'
+    >
 
         <h2> Here's What we have in Stock! </h2>
         <table>
@@ -32,7 +35,11 @@
             <td>{{item.color}}</td>
           </tr>
         </table>
-        <form class='addItem' name='items' ng-submit='sale.addProduct(sale.newItem)'>
+        <form
+          class='addItem'
+          name='items'
+          ng-submit='sale.addProduct(sale.newItem)'
+        >
           <input type='text' name='items' placeholder='Name..' ng-model='sale.newItem.name'>
           <input type='text' name='items' placeholder='Price..' ng-model='sale.newItem.price'>
           <input type='text' name='items' placeholder='Quantity..' ng-model='sale.newItem.quantity'>
