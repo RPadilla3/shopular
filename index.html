@@ -18,14 +18,17 @@
        class='table'
     >
 
-        <h2> Here's What we have in Stock! </h2>
-        <table>
+    <h2> Here's What we have in Stock! </h2>
+      <table>
+        <thead>
           <tr>
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Color</th>
           </tr>
+        </thead>
+        <tbody>
           <tr ng-repeat='item in sale.items'>
             <td>{{item.name}}</td>
             <td> {{(item.price - item.discount) * sale.tax | currency}}
@@ -34,20 +37,46 @@
             <td>{{item.quantity}}</td>
             <td>{{item.color}}</td>
           </tr>
-        </table>
-        <form
-          class='addItem'
+        </tbody>
+      </table>
+      <form
+        class='addItem'
+        name='items'
+        ng-submit='items.$valid && sale.addProduct(sale.newItem)'
+      >
+        <input
+          type='text'
           name='items'
-          ng-submit='sale.addProduct(sale.newItem)'
+          placeholder='Name..'
+          ng-model='sale.newItem.name'
         >
-          <input type='text' name='items' placeholder='Name..' ng-model='sale.newItem.name'>
-          <input type='text' name='items' placeholder='Price..' ng-model='sale.newItem.price'>
-          <input type='text' name='items' placeholder='Quantity..' ng-model='sale.newItem.quantity'>
-          <input type='text' name='items' placeholder='Color..' ng-model='sale.newItem.color'>
-          <input type='text' name='items' placeholder='Discount..' ng-model='sale.newItem.discount'>
-          <button name='items'>Add Item</button>
-        </form>
-      </main>
+        <input
+          type='text'
+          name='items'
+          placeholder='Price..'
+          ng-model='sale.newItem.price'
+        >
+        <input
+          type='text'
+          name='items'
+          placeholder='Quantity..'
+          ng-model='sale.newItem.quantity'
+        >
+        <input
+          type='text'
+          name='items'
+          placeholder='Color..'
+          ng-model='sale.newItem.color'
+        >
+        <input
+          type='text'
+          name='items'
+          placeholder='Discount..'
+          ng-model='sale.newItem.discount'
+        >
+        <button name='items'>Add Item</button>
+      </form>
+    </main>
 
 
     <footer>
