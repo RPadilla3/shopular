@@ -22,14 +22,14 @@
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Color</th>
+            <th ng-click='sale.sortCategory("name")'>Name</th>
+            <th ng-click='sale.sortCategory("price")'>Price</th>
+            <th ng-click='sale.sortCategory("quantity")'>Quantity</th>
+            <th ng-click='sale.sortCategory("color")'>Color</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat='item in sale.items'>
+          <tr ng-repeat='item in sale.items | orderBy: sale.sortOrder '>
             <td>{{item.name}}</td>
             <td> {{(item.price - item.discount) * sale.tax | currency}}
               <img src='image/sale.jpg' ng-hide='item.discount === 0' class='sale'>
@@ -91,6 +91,7 @@
 
 
     <footer>
+      &copy; Property of Shopular.Inc
     </footer>
 
 
