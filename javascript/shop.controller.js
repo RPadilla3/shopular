@@ -2,13 +2,13 @@
   'use strict';
 
   angular.module('shop')
-    .controller('ShopController', ShopController)
-    .controller('FormController', FormController);
+    .controller('ShopController', ShopController);
+    // .controller('FormController', FormController);
 
 
   // ShopController Constructor
   function ShopController(){
-
+    this.newItem = {};
     this.items = [
         { "id": 2957, "name": "widget", "price": 32, "quantity": 203, "color": "red", "discount": 31 },
         { "id": 89274, "name": "golf club", "price": 98, "quantity": 10, "color": "black", "discount": 0 },
@@ -26,21 +26,16 @@
 
       this.tax = 1.0575;
 
-  }
-
-  // FormController Constructo function
-  function FormController() {
-    this.newItem = {};
-
-    this.addProduct = function addProduct(product){
-        ShopController.items.push({
-          name: product.name,
-          price: product.price,
-          quantity: product.quantity,
-          discount: product.discount
-        });
+      this.addProduct = function addProduct(product){
+        console.log('hello');
+          this.items.push({
+            name: product.name,
+            price: product.price,
+            quantity: product.quantity,
+            discount: product.discount,
+            color: product.color
+          });
+        }
       };
-
-  }
 
 }());
