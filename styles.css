@@ -4,11 +4,21 @@
 header h1 {
   text-align: center; }
 
+body {
+  background-color: #b4d1d9; }
+
 h2 {
   text-align: center; }
 
+[ng-cloak] {
+  display: none; }
+
 .sale {
   float: right; }
+
+.addItem {
+  text-align: center;
+  padding-top: 1%; }
 
 table {
   border-spacing: 3rem;
