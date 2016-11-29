@@ -40,6 +40,7 @@
         </tbody>
       </table>
       <form
+        novalidate
         class='addItem'
         name='items'
         ng-submit='items.$valid && sale.addProduct(sale.newItem)'
@@ -49,30 +50,35 @@
           name='items'
           placeholder='Name..'
           ng-model='sale.newItem.name'
+          required
         >
         <input
           type='text'
           name='items'
           placeholder='Price..'
           ng-model='sale.newItem.price'
+          required
         >
         <input
           type='text'
           name='items'
           placeholder='Quantity..'
           ng-model='sale.newItem.quantity'
+          required
         >
         <input
           type='text'
           name='items'
           placeholder='Color..'
           ng-model='sale.newItem.color'
+          required
         >
         <input
           type='text'
           name='items'
           placeholder='Discount..'
           ng-model='sale.newItem.discount'
+          required
         >
         <button name='items'>Add Item</button>
       </form>
