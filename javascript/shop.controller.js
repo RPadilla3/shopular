@@ -8,6 +8,7 @@
 
   // ShopController Constructor
   function ShopController(){
+    this.sortOrder = 'price';
     this.newItem = {};
     this.items = [
         { "id": 2957, "name": "widget", "price": 32, "quantity": 203, "color": "red", "discount": 31 },
@@ -35,7 +36,11 @@
             color: product.color
           });
         }
-        
+
+      this.sortCategory = function sortCategory(sortOrder){
+        this.sortOrder = sortOrder;
+      }
+
     };
 
 
