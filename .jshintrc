@@ -88,7 +88,8 @@
 
     // Custom Globals
     "globals"       : {
-      "chai": true
+      "chai": true,
+      "angular": true
       }
 
 }
