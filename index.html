@@ -39,6 +39,11 @@
           </tr>
         </tbody>
       </table>
+
+      <p ng-show='items.items.$touched && !items.items.$valid'>
+        YOU MUST ENTER INFORMATION INTO ALL FIELDS!
+      </p>
+
       <form
         novalidate
         class='addItem'
