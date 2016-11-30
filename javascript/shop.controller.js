@@ -14,6 +14,8 @@
 
       this.tax = 1.0575;
 
+      this.items = ProductService.getAll();
+
       this.addProduct = function addProduct(product){
           ProductService.addNew(product);
 
