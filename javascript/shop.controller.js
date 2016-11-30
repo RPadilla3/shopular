@@ -5,6 +5,8 @@
     .controller('ShopController', ShopController);
     // .controller('FormController', FormController);
 
+    ShopController.$inject = ['ProductService']
+    console.log('hello');
 
   // ShopController Constructor
   function ShopController(){
@@ -27,6 +29,11 @@
 
       this.tax = 1.0575;
 
+
+      /**
+       * [addProduct description]
+       * @param {[type]} product [description]
+       */
       this.addProduct = function addProduct(product){
           this.items.push({
             name: product.name,
@@ -37,6 +44,12 @@
           });
         }
 
+
+      /**
+       * [sortCategory description]
+       * @param  {[type]} sortOrder [description]
+       * @return {[type]}           [description]
+       */
       this.sortCategory = function sortCategory(sortOrder){
         this.sortOrder = sortOrder;
       }
