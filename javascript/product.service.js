@@ -4,11 +4,14 @@
   angular.module('shop')
     .factory('ProductService', ProductService);
 
+  var storedItems = JSON.parse(localStorage.getItem('items'));
+  console.log(storedItems);
+
 
 
  function ProductService() {
 
-   var items = [
+   var items = storedItems || [
          { "id": 2957, "name": "widget", "price": 32, "quantity": 203, "color": "red", "discount": 31 },
          { "id": 89274, "name": "golf club", "price": 98, "quantity": 10, "color": "black", "discount": 0 },
          { "id": 64, "name": "iPhone", "price": 499, "quantity": 2, "color": "white", "discount": 0 },
@@ -26,7 +29,7 @@
    return {
      getAll: getAll,
      addNew: addNew,
-     update: updateItems
+     update: update
    };
 
    function getAll(){
@@ -35,26 +38,21 @@
 
    function addNew(product){
       items.push({
-       id: product.id,
        name: product.name,
        price: product.price,
        quantity: Number(product.quantity),
        color: product.color,
        discount: Number(product.discount)
      });
-
+     update();
      console.log(items);
    }
 
-   function updateItems(){
-
+   function update() {
+    localStorage.setItem('items', angular.toJson(items))
    }
 
 
-
-  }
-
-
-
+ }
 
 }());
