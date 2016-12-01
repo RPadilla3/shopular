@@ -6,13 +6,12 @@
 
     UserController.$inject = ['UserService']
 
-
-
     function UserController(UserService){
 
       this.newUser = {};
-      
-      function callService() {
+      this.all = UserService.returnAll();
+
+      function callService(login) {
         UserService.userLogin(login);
       }
     };
