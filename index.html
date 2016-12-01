@@ -9,7 +9,7 @@
 
   <body>
     <header>
-      <h1> Welcome To Our Online Shop! </h1>
+      <h1>Welcome To Our Online Shop</h1>
     </header>
 
     <main
@@ -19,13 +19,27 @@
     >
 
     <h2> Here's What we have in Stock! </h2>
+
+    <main ng-controller='UserController as user'>
+      <form class='user-login' ng-submit='user.callService(user.newUser)'>
+        <input type='text' name='login' placeholder='username' ng-model='user.newUser.login'>
+        <input type='submit' value='login'>
+      </form>
+
+      <ul>
+        <li ng-repeat='username in user.all'>
+          {{username.login}} signed in at: {{username.time}}
+        </li>
+      </ul>
+    </main>
+
       <table>
         <thead>
           <tr>
-            <th ng-click='sale.sortCategory("name")'>Name</th>
-            <th ng-click='sale.sortCategory("price")'>Price</th>
-            <th ng-click='sale.sortCategory("quantity")'>Quantity</th>
-            <th ng-click='sale.sortCategory("color")'>Color</th>
+            <th class='name' ng-click='sale.sortCategory("name")'>Name</th>
+            <th class='price' ng-click='sale.sortCategory("price")'>Price</th>
+            <th class='quantity' ng-click='sale.sortCategory("quantity")'>Quantity</th>
+            <th class='color' ng-click='sale.sortCategory("color")'>Color</th>
           </tr>
         </thead>
         <tbody>
@@ -98,7 +112,8 @@
     <script src='node_modules/angular/angular.js'></script>
     <script src='javascript/shop.module.js'></script>
     <script src='javascript/shop.controller.js'></script>
-    <script src='javascript/storage.controller.js'></script>
+    <script src='javascript/user.controller.js'></script>
+    <script src='javascript/user.service.js'></script>
     <script src='javascript/product.service.js'></script>
   </body>
 </html>
