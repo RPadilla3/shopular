@@ -9,7 +9,8 @@
       var userInfo = [];
 
       return {
-        userLogin: userLogin
+        userLogin: userLogin,
+        returnAll: returnAll
       };
 
       function userLogin(login) {
@@ -17,6 +18,10 @@
           login: login.username,
           time: Date.now()
         })
+      }
+
+      function returnAll() {
+        return userInfo;
       }
     };
 
