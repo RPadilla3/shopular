@@ -5,9 +5,6 @@
     .factory('ProductService', ProductService);
 
   var storedItems = JSON.parse(localStorage.getItem('items'));
-  console.log(storedItems);
-
-
 
  function ProductService() {
 
