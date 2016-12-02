@@ -1,5 +1,6 @@
+'use strict';
+
 module.exports = function(grunt) {
-  'use strict';
 
     grunt.initConfig({
 
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
        },
 
        karma: { // task name
-      options: {
+        options: {
         // These options apply to all of our TARGETS
         frameworks: [ 'mocha', 'chai' ],
         client: {
@@ -44,7 +45,8 @@ module.exports = function(grunt) {
             'node_modules/angular-mocks/angular-mocks.js',
             'src/javascript/shop.module.js',
             'src/javascript/shop.controller.js',
-            'src/javascript/product.service.js'
+            'src/javascript/product.service.js',
+            'test/specs/product.service.spec.js'
           ]
         }
       }
