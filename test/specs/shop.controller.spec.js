@@ -40,7 +40,13 @@
 
       ShopController.addProduct(addedNewItem);
       expect(ShopController.newItem.cat).to.equal.undefined;
-    })
+    });
+
+    it('Should require proper DataType value for Each Property', function() {
+      expect(typeof(ShopController.newItem.name)).to.be.a('string');
+      expect(ShopController.items[0].price).to.equal(5);
+
+    });
 
 
   })
