@@ -29,9 +29,19 @@
       ShopController = $controller('ShopController')
     }));
 
-    it('Should use the services function to add a new item', function() {
+    it('Should have the right scope variables', function() {
       expect(ShopController.newItem).to.be.an('object');
+      expect(ShopController.items).to.be.an('array');
+      expect(ShopController.items.length).to.equal(12);
     });
+
+    it('Should add items into the array of items, from the service function', function() {
+      ShopController.newItem.cat = 'pet';
+      var addedNewItem = {};
+
+      ShopController.addProduct(addedNewItem);
+      expect(ShopController.newItem.cat).to.equal.undefined;
+    })
 
 
   })
