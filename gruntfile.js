@@ -46,7 +46,8 @@ module.exports = function(grunt) {
             'src/javascript/shop.module.js',
             'src/javascript/shop.controller.js',
             'src/javascript/product.service.js',
-            'test/specs/product.service.spec.js'
+            'test/specs/product.service.spec.js',
+            'test/specs/shop.controller.spec.js'
           ]
         }
       }
