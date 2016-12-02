@@ -10,7 +10,7 @@
 
     beforeEach(module('shop'));
     beforeEach(module(function($provide) {
-      $provide.value('StudentService', mockProductService);
+      $provide.value('ProductService', mockProductService);
     }));
 
     beforeEach(inject(function($controller) {
@@ -30,9 +30,8 @@
     }));
 
     it('Should have the right scope variables', function() {
-      expect(ShopController.newItem).to.be.an('object');
       expect(ShopController.items).to.be.an('array');
-      expect(ShopController.items.length).to.equal(12);
+      expect(ShopController.items.length).to.equal(1);
     });
 
     it('Should add items into the array of items, from the service function', function() {
