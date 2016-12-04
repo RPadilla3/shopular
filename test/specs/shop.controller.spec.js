@@ -35,11 +35,11 @@
     });
 
     it('Should add items into the array of items, from the service function', function() {
-      ShopController.newItem.cat = 'pet';
       var addedNewItem = {};
+      ShopController.newItem.cat = 'pet';
 
       ShopController.addProduct(addedNewItem);
-      expect(ShopController.newItem.cat).to.equal.undefined;
+      expect(ShopController.newItem.cat).to.equal('pet');
     });
 
     it('Should require proper DataType value for Each Property', function() {
