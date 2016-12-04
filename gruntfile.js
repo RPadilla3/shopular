@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             ui: 'bdd'
           }
         },
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         singleRun: true,
 
         preprocessors: {
