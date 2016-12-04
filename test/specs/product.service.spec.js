@@ -22,18 +22,22 @@
       expect(result).to.be.an('array');
       expect(result.length).to.equal(12);
       expect(result[0].name).to.equal('widget');
-      console.log(ProductService.update());
 
     });
 
     describe('Saves array of items to localStorage', function(){
-      var items = [{}];
 
+      it("Should save to local storage an array of forsale items", function(){
+        var standardItems = JSON.parse(localStorage.getItem("items"));
+        var newItem = { 'id': 333, 'name': 'dog', 'price': 1000, 'quantity': 1, 'color': 'brown', 'discount': 0 };
+        ProductService.addNew(newItem);
+        var newLocalStorage = JSON.parse(localStorage.getItem('items'));
+        expect(newLocalStorage.length).to.equal(13);
+        expect(newLocalStorage).to.be.an('Array');
+        expect(newLocalStorage[12].name).to.equal('dog');
 
-      it('Should save an array to the localStorage', function(){
-        expect(JSON.parse(localStorage.getItems(items)).length).to.equal(1);
-          ProductService.update();
-      })
+      });
+
     });
 
 
