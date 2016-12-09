@@ -15,7 +15,7 @@
 
       function userLogin(login) {
         userInfo.push({
-          login: login.username,
+          user: userLogin.username,
           time: Date.now()
         });
       }
