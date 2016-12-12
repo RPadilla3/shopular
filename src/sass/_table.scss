@@ -1,0 +1,49 @@
+table {
+    border-spacing: 3rem;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+
+      tr:nth-child(odd) {
+        background-color: $oddColors;
+    }
+
+      tr:hover {
+        background-color: #816868;
+      }
+
+    th {
+        border: 2px solid $borderColor;
+
+    }
+
+    .name:active {
+      color: #ffffff;
+      background-color: #253da7;
+      transition: all .3s linear;
+
+    }
+
+    .price:active {
+      color: #ffffff;
+      background-color: #253da7;
+      transition: all .3s linear;
+    }
+
+    .quantity:active {
+      color: #ffffff;
+      background-color: #253da7;
+      transition: all .3s linear;
+    }
+
+    .color:active {
+      color: #ffffff;
+      background-color: #253da7;
+      transition: all .1s linear;
+    }
+
+    td {
+        border: 1px solid $borderColor;
+        text-align: center;
+    }
+}

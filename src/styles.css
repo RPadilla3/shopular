@@ -1,0 +1,72 @@
+@mixins centering($width) {
+  width: 80%;
+  margin: 0 auto; }
+header h1 {
+  text-align: center; }
+
+body {
+  background-color: #b4d1d9; }
+
+h2 {
+  text-align: center; }
+
+[ng-cloak] {
+  display: none; }
+
+.ng-invalid.ng-touched {
+  border: 2px solid red; }
+
+.sale {
+  float: right; }
+
+.addItem {
+  text-align: center;
+  padding-top: 1%; }
+
+p {
+  text-align: center;
+  font-size: 1.5em; }
+
+.user-login {
+  text-align: center;
+  margin-bottom: 1%; }
+
+table {
+  border-spacing: 3rem;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto; }
+  table tr:nth-child(odd) {
+    background-color: #cccccc; }
+  table tr:hover {
+    background-color: #816868; }
+  table th {
+    border: 2px solid #000000; }
+  table .name:active {
+    color: #ffffff;
+    background-color: #253da7;
+    transition: all .3s linear; }
+  table .price:active {
+    color: #ffffff;
+    background-color: #253da7;
+    transition: all .3s linear; }
+  table .quantity:active {
+    color: #ffffff;
+    background-color: #253da7;
+    transition: all .3s linear; }
+  table .color:active {
+    color: #ffffff;
+    background-color: #253da7;
+    transition: all .1s linear; }
+  table td {
+    border: 1px solid #000000;
+    text-align: center; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: .75em; }
+
+/*# sourceMappingURL=styles.css.map */
