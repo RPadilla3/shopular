@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app='shop'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Shopular</title>
+    <link href='normalize.css' rel='stylesheet' type='text/css'>
+    <link href='styles.css' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <header>
+      <h1>Welcome To Our Online Shop</h1>
+      <h2> Here's What we have in Stock</h2>
+    </header>
+
+    <main ng-controller='UserController as user'>
+      <form class='user-login' ng-submit='user.callService(user.newUser)'>
+        <input type='text' name='login' placeholder='username' ng-model='user.newUser.login'>
+        <input type='submit' value='login'>
+      </form>
+
+      <ul>
+        <li ng-repeat='username in user.all'>
+          {{username.login}} signed in at: {{username.time}}
+        </li>
+      </ul>
+    </main>
+
+    <main ng-cloak ng-controller='ShopController as sale' class='table'>
+
+      <table>
+        <thead>
+          <tr>
+            <th class='name' ng-click='sale.sortCategory("name")'>Name</th>
+            <th class='price' ng-click='sale.sortCategory("price")'>Price</th>
+            <th class='quantity' ng-click='sale.sortCategory("quantity")'>Quantity</th>
+            <th class='color' ng-click='sale.sortCategory("color")'>Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='item in sale.items | orderBy: sale.sortOrder '>
+            <td>{{item.name}}</td>
+            <td> {{(item.price - item.discount) * sale.tax | currency}}
+              <img src='image/sale.jpg' ng-hide='item.discount === 0' class='sale'>
+            </td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.color}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p ng-show='items.items.$touched && !items.items.$valid'>
+        YOU MUST ENTER INFORMATION INTO ALL FIELDS!
+      </p>
+
+      <form
+        novalidate
+        class='addItem'
+        name='items'
+        ng-submit='items.$valid && sale.addProduct(sale.newItem)'
+      >
+        <input
+          type='text'
+          name='items'
+          placeholder='Name..'
+          ng-model='sale.newItem.name'
+          required
+        >
+        <input
+          type='text'
+          name='items'
+          placeholder='Price..'
+          ng-model='sale.newItem.price'
+          required
+        >
+        <input
+          type='text'
+          name='items'
+          placeholder='Quantity..'
+          ng-model='sale.newItem.quantity'
+          required
+        >
+        <input
+          type='text'
+          name='items'
+          placeholder='Color..'
+          ng-model='sale.newItem.color'
+          required
+        >
+        <input
+          type='text'
+          name='items'
+          placeholder='Discount..'
+          ng-model='sale.newItem.discount'
+          required
+        >
+        <button name='items'>Add Item</button>
+      </form>
+    </main>
+
+
+    <footer>
+      &copy; Property of Shopular.Inc
+    </footer>
+
+
+    <script src='node_modules/angular/angular.js'></script>
+    <script src='javascript/shop.module.js'></script>
+    <script src='javascript/shop.controller.js'></script>
+    <script src='javascript/user.controller.js'></script>
+    <script src='javascript/user.service.js'></script>
+    <script src='javascript/product.service.js'></script>
+  </body>
+</html>
